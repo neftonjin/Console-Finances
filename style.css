@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+ body{
+    height: 100vh;
+    display: flex;
+  
+ }
+main{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: darkorange;
+    margin: 0 auto;
+    max-width:800px ;
+
+    border:solid 2px darkgoldenrod;
+     
+}
+.row-section{
+    padding: 1rem;
+}
+h1{
+    padding: 1rem;
+    font-size: 3.5rem;
+}

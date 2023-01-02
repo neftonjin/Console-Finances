@@ -101,6 +101,7 @@ let average = "";
 let gip = "";
 let gdp = "";
 
+//  This function gets the total months in the array by looping on every item in the array;
 function  getTotalMonths(array) {
     array.forEach(e => {
         totalMonths++;
@@ -108,6 +109,7 @@ function  getTotalMonths(array) {
     return totalMonths;
 }
 
+// This function is adding all the numbers from all the months in the array and is returning the total
 function getTotal(array){
     for( let i=0; i<array.length; i++){
         for( let j=0; j<array[i].length; j++)
@@ -119,12 +121,12 @@ function getTotal(array){
     return  total;
 
 }
-
+// This function is getting the average change from all the months in the array
 function getAverage(array){
 
     return Math.round((getTotal(array)/getTotalMonths(array)) * 100)/ 100;
 }
-
+//This function is getting the lowest number in the array
 function getLowestMonth(array){
     let low = array[0][1];
     let month =array[0][0];
@@ -135,9 +137,9 @@ function getLowestMonth(array){
                 month = array[i][0]
         }
     }
-    return "Greatest Decrease in Profits: " + month +" $" + low;
+    return "Greatest Decrease in Profits: " + month +" ($" + low +")";
 }
-
+//This function is getting the highest number in the array
 function getHighestMonth(array){
     let high=array[0][1];
     let month =array[0][0];
@@ -148,9 +150,10 @@ function getHighestMonth(array){
                 month = array[i][0];
         }
     }
-   return "Greatest Increase in Profits: " + month +" $" + high;
+   return "Greatest Increase in Profits: " + month +" ($ " + high+")";
 }
 
+//The code below is inserting the JavaScript functions values into the html document
 document.getElementById("total_months").innerHTML = getTotalMonths(finances);
 document.getElementById("total").innerHTML = getTotal(finances);
 document.getElementById("average").innerHTML = getAverage(finances);
