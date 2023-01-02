@@ -6,6 +6,7 @@
  body{
     height: 100vh;
     display: flex;
+    background-color: darkcyan;
   
  }
 main{
@@ -22,7 +23,12 @@ main{
 }
 .row-section{
     padding: 1rem;
+    
 }
+.row-section span , .whiter{
+    color: aliceblue;
+}
+
 h1{
     padding: 1rem;
     font-size: 3.5rem;

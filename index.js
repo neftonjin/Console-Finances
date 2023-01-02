@@ -97,9 +97,10 @@ var finances = [
 
 let totalMonths = 0;
 let total = 0;
-let average = "";
-let gip = "";
-let gdp = "";
+let average = 0;
+let low_month = 0;
+let high_month = 0;
+let dolar='$';
 
 //  This function gets the total months in the array by looping on every item in the array;
 function  getTotalMonths(array) {
@@ -114,13 +115,14 @@ function getTotal(array){
     for( let i=0; i<array.length; i++){
         for( let j=0; j<array[i].length; j++)
         {
-         total +=array[i][1];
+         total += array[i][1];
          
         }
     }
-    return  total;
+    return total;
 
 }
+
 // This function is getting the average change from all the months in the array
 function getAverage(array){
 
@@ -128,29 +130,27 @@ function getAverage(array){
 }
 //This function is getting the lowest number in the array
 function getLowestMonth(array){
-    let low = array[0][1];
     let month =array[0][0];
     for(let i=0; i<array.length; i++){
         for(let j=0; j<array[i].length; j++)
-            if(array[i][1] < low ){
-                low = array[i][1];
+            if(array[i][1] < low_month ){
+                low_month = array[i][1];
                 month = array[i][0]
         }
     }
-    return "Greatest Decrease in Profits: " + month +" ($" + low +")";
+    return  month +" ($" + low_month +")";
 }
 //This function is getting the highest number in the array
 function getHighestMonth(array){
-    let high=array[0][1];
-    let month =array[0][0];
+    let month = array[0][0];
     for(let i=0; i<array.length; i++){
         for(let j=0; j<array[i].length; j++)
-            if(array[i][1] > high ){
-                high = array[i][1];
+            if(array[i][1] > high_month ){
+                high_month  = array[i][1];
                 month = array[i][0];
         }
     }
-   return "Greatest Increase in Profits: " + month +" ($ " + high+")";
+   return   month +" ($ " + high_month +")";
 }
 
 //The code below is inserting the JavaScript functions values into the html document

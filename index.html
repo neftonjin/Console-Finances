@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-gb">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <link rel="stylesheet" href="style.css" type="text/css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M4 Challenge</title>
-</head>
-<body>
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M4 Challenge</title>
+  </head>
+  <body>
+    <main>
+      <h1>Financial Analysis</h1>
+      <hr />
+      <section class="total-months row-section">
+        <!-- Show montsh here !! -->
+        <p>Total months: <span id="total_months"></span></p>
+      </section>
+      <section class="total row-section">
+        <!-- Show total !! -->
+        <p>Total: <span class="whiter">$ </span><span id="total"></span></p>
+      </section>
+      <section class="average row-section">
+        <!-- Show average !! -->
+        <p>Average Change: <span class="whiter">$ </span><span id="average"></span></p>
+      </section>
+      <section class="highest-month row-section">
+        <!-- Show highest-month!! -->
+        <p>Greatest Increase in Profits: <span id="highest-month"></span></p>
+      </section>
+      <section class="lowest-month row-section">
+        <!-- Show lowest-month !! -->
+        <p>Greatest Decrease in Profits: <span id="lowest-month"></span></p>
+      </section>
 
-  <main>
-    <h1>Financial Analysis</h1>
-    <hr />
-    <section class="total-months row-section">
-      <!-- Show montsh here !! -->
-      <p> Total months: <span id="total_months"></span></p> 
-    </section>
-    <section class="total row-section">
-      <!-- Show total !! -->
-         <p>Total:  $<span id="total"></span></p> 
-    </section>
-    <section class="average row-section">
-      <!-- Show average !! -->
-     <p>Average Change: $<span id="average"></span></p> 
-    </section>
-    <section class="lowest-month row-section">
-      <!-- Show lowest-month !! -->
-       <p> <span id="lowest-month"></span> </p>    
-    </section>
-    <section class="highest-month row-section">
-      <!-- Show highest-month!! -->
-     <p> <span id="highest-month"></span> </p> 
-    </section>
-    <hr />
-  </main>
-  <script src="index.js"></script>
-</body>
+      <hr />
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>
 <!-- Total Months: 25
 // Total: $2561231
