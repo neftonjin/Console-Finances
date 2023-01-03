@@ -100,6 +100,9 @@ let total = 0;
 let average = 0;
 let low_month = 0;
 let high_month = 0;
+let high_month_name = finances[0][0];
+let low_month_name = finances[0][0];  
+
 let dolar='$';
 
 //  This function gets the total months in the array by looping on every item in the array;
@@ -126,36 +129,51 @@ function getTotal(array){
 // This function is getting the average change from all the months in the array
 function getAverage(array){
 
-    return Math.round((getTotal(array)/getTotalMonths(array)) * 100)/ 100;
+    return  average = Math.round((total/totalMonths) * 100)/ 100;
 }
 //This function is getting the lowest number in the array
 function getLowestMonth(array){
-    let month =array[0][0];
+    
     for(let i=0; i<array.length; i++){
         for(let j=0; j<array[i].length; j++)
             if(array[i][1] < low_month ){
                 low_month = array[i][1];
-                month = array[i][0]
+                low_month_name = array[i][0]
         }
     }
-    return  month +" ($" + low_month +")";
+    return  low_month_name +" ($" + low_month +")";
 }
 //This function is getting the highest number in the array
 function getHighestMonth(array){
-    let month = array[0][0];
+    
     for(let i=0; i<array.length; i++){
         for(let j=0; j<array[i].length; j++)
             if(array[i][1] > high_month ){
                 high_month  = array[i][1];
-                month = array[i][0];
+                high_month_name = array[i][0];
         }
     }
-   return   month +" ($ " + high_month +")";
+   return  high_month_name +" ($ " + high_month +")";
 }
 
+
+
 //The code below is inserting the JavaScript functions values into the html document
+
+
 document.getElementById("total_months").innerHTML = getTotalMonths(finances);
 document.getElementById("total").innerHTML = getTotal(finances);
 document.getElementById("average").innerHTML = getAverage(finances);
 document.getElementById("lowest-month").innerHTML=getLowestMonth(finances);
 document.getElementById("highest-month").innerHTML= getHighestMonth(finances);
+
+
+// The code below is showing the values in the console 
+console.log("Finances Analasys")
+console.log("------------------")
+console.log(totalMonths);
+console.log(total);
+console.log(average);
+console.log(high_month_name + " $" + high_month);
+console.log(low_month_name +  " $" + low_month);
+
