@@ -174,6 +174,6 @@ console.log("------------------")
 console.log(totalMonths);
 console.log(total);
 console.log(average);
-console.log(high_month_name + " $" + high_month);
-console.log(low_month_name +  " $" + low_month);
+console.log("Greatest increase in Profits: " + high_month_name + " $" + high_month);
+console.log( "Greatest Decrease in Profits: "+ low_month_name +  " $" + low_month);
 
