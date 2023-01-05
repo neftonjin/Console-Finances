@@ -95,13 +95,13 @@ var finances = [
 // Greatest Decrease in Profits: Sep-2013 ($-2196167)
 
 
-let totalMonths = 0;
-let total = 0;
-let average = 0;
-let low_month = 0;
-let high_month = 0;
-let high_month_name = finances[0][0];
-let low_month_name = finances[0][0];  
+let totalMonths = 0;  //Total months in the array
+let total = 0;    // Total profit 
+let average = 0;   // Average change 
+let low_month = 0;  // Lowest income in a month
+let high_month = 0; // Highest income in a month
+let high_month_name = finances[0][0]; // The date of the Highest income month
+let low_month_name = finances[0][0];  // The date of the Lowest income date 
 
 let dolar='$';
 
