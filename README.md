@@ -28,4 +28,4 @@
 
  ### App preview
 
- <img width="1190" alt="Untitled" src="https://user-images.githubusercontent.com/25286630/210765249-f98c9c78-e06c-453e-b3c2-694b884edd76.png">
+ <img width="1050" alt="Untitled" src="https://user-images.githubusercontent.com/25286630/211109818-1ccfb79b-6657-40c8-bad4-c12cf25998dd.png">

@@ -95,18 +95,18 @@ var finances = [
 // Greatest Decrease in Profits: Sep-2013 ($-2196167)
 
 
-let totalMonths = 0;  //Total months in the array
-let total = 0;    // Total profit 
-let average = 0;   // Average change 
-let low_month = 0;  // Lowest income in a month
+let totalMonths = 0; //Total months in the array
+let total = 0; // Total profit 
+let average = 0; // Average change 
+let sumTotalChanges=0; //Sum of total changes 
+let low_month = 0; // Lowest income in a month
 let high_month = 0; // Highest income in a month
 let high_month_name = finances[0][0]; // The date of the Highest income month
-let low_month_name = finances[0][0];  // The date of the Lowest income date 
+let low_month_name = finances[0][0]; // The date of the Lowest income date 
 
-let dolar='$';
 
 //  This function gets the total months in the array by looping on every item in the array;
-function  getTotalMonths(array) {
+function getTotalMonths(array) {
     array.forEach(e => {
         totalMonths++;
     })
@@ -114,46 +114,80 @@ function  getTotalMonths(array) {
 }
 
 // This function is adding all the numbers from all the months in the array and is returning the total
-function getTotal(array){
-    for( let i=0; i<array.length; i++){
-        for( let j=0; j<array[i].length; j++)
-        {
-         total += array[i][1];
-         
+function getTotal(array) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            total += array[i][1];
+
         }
     }
     return total;
 
 }
 
-// This function is getting the average change from all the months in the array
-function getAverage(array){
+//This function is getting the difference losses/profit between months
 
-    return  average = Math.round((total/totalMonths) * 100)/ 100;
+function getChanges(array) {
+    let changes = [['Dec-2009',0]]; //This entry was added as discussed in class so that the  new array stay the same length of 86 
+
+    for (let i = 0; i < array.length - 1; i++) {
+        let month = array[i][0];
+        let number1 = array[i][1];
+        let number2 = array[i + 1][1];
+        let result = number2 - number1;
+        changes.push([ month ,result]);
+        
+    }
+    return changes;
 }
-//This function is getting the lowest number in the array
-function getLowestMonth(array){
+
+changes = getChanges(finances); //Saving the result into a variable in order to make the code easier to read
+
+// console.log(changes);
+// This function is getting the average change from all the months in the array
+
+function sumOfChanges(){
+    let sum=0;
+    for(let i =0; i<changes.length; i++){
+     sum +=changes[i][1];
     
-    for(let i=0; i<array.length; i++){
-        for(let j=0; j<array[i].length; j++)
-            if(array[i][1] < low_month ){
+    }
+    return sum;
+}
+
+
+//This function is getting the average from the changes in profit/losses
+function getAverage() {
+   
+ return average = Math.round((sumOfChanges()/ changes.length) * 100) / 100;
+}
+
+
+
+
+//This function is getting the lowest month value in the new array (changes)
+function getLowestMonth(array) {
+
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++)
+            if (array[i][1] < low_month) {
                 low_month = array[i][1];
                 low_month_name = array[i][0]
-        }
+            }
     }
-    return  low_month_name +" ($" + low_month +")";
+    return low_month_name + " ($" + low_month + ")";
 }
-//This function is getting the highest number in the array
-function getHighestMonth(array){
-    
-    for(let i=0; i<array.length; i++){
-        for(let j=0; j<array[i].length; j++)
-            if(array[i][1] > high_month ){
-                high_month  = array[i][1];
+//This function is getting the highest month value in the new array (changes)
+function getHighestMonth(array) {
+
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++)
+            if (array[i][1] > high_month) {
+                high_month = array[i][1];
                 high_month_name = array[i][0];
-        }
+            }
     }
-   return  high_month_name +" ($ " + high_month +")";
+    return high_month_name + " ($ " + high_month + ")";
 }
 
 
@@ -163,17 +197,16 @@ function getHighestMonth(array){
 
 document.getElementById("total_months").innerHTML = getTotalMonths(finances);
 document.getElementById("total").innerHTML = getTotal(finances);
-document.getElementById("average").innerHTML = getAverage(finances);
-document.getElementById("lowest-month").innerHTML=getLowestMonth(finances);
-document.getElementById("highest-month").innerHTML= getHighestMonth(finances);
+document.getElementById("average").innerHTML = getAverage();
+document.getElementById("lowest-month").innerHTML = getLowestMonth(changes);
+document.getElementById("highest-month").innerHTML = getHighestMonth(changes);
 
 
 // The code below is showing the values in the console 
-console.log("Finances Analasys")
+console.log("Finances Analyses")
 console.log("------------------")
 console.log(totalMonths);
 console.log(total);
 console.log(average);
 console.log("Greatest increase in Profits: " + high_month_name + " $" + high_month);
-console.log( "Greatest Decrease in Profits: "+ low_month_name +  " $" + low_month);
-
+console.log("Greatest Decrease in Profits: " + low_month_name + " $" + low_month);
