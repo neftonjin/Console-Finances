@@ -7,7 +7,7 @@
 - This application is calculating the fallowing :
   -Total number of Months in the array provided.  
   -Total sum of Profit/Losses based on the array provided.
-  -Average of the changes in Profit/Losses (This is achieved by dividing the number of months to the total of sum of Profit/Losses)
+  -Average of the changes in Profit/Losses (This is achieved by dividing the number of months to the total changes  of Profit/Losses)
   -The highest profit month.
   -The lowest profit month.
 

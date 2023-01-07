@@ -120,10 +120,10 @@ function getTotal(array) {
 //This function is getting the difference losses/profit between months
 
 function getChanges(array) {
-    let changes = [['Dec-2009',0]]; //This entry was added as discussed in class so that the  new array stay the same length of 86 
+    let changes = []; //This entry was added as discussed in class so that the  new array stay the same length of 86 ['Dec-2009',0]
 
     for (let i = 0; i < array.length - 1; i++) {
-        let month = array[i][0];
+        let month = array[i+1][0];
         let number1 = array[i][1];
         let number2 = array[i + 1][1];
         let result = number2 - number1;
@@ -135,7 +135,7 @@ function getChanges(array) {
 
 changes = getChanges(finances); //Saving the result into a variable in order to make the code easier to read
 
-// console.log(changes);
+console.log(changes);
 // This function is getting the average change from all the months in the array
 
 function sumOfChanges(){
