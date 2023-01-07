@@ -135,7 +135,7 @@ function getChanges(array) {
 
 changes = getChanges(finances); //Saving the result into a variable in order to make the code easier to read
 
-console.log(changes);
+// console.log(changes);
 // This function is getting the average change from all the months in the array
 
 function sumOfChanges(){
