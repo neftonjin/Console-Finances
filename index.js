@@ -117,11 +117,11 @@ function getTotal(array) {
 
 }
 
-//This function is getting the difference losses/profit between months
+//This function is returning a new array with the difference losses/profit between months
 
 function getChanges(array) {
-    let changes = []; //This entry was added as discussed in class so that the  new array stay the same length of 86 ['Dec-2009',0]
-
+    // let changes = [['Jan-2010', 867884]]; This entry was added as discussed in class so that the new array stay the same length of 86 and the average will be $7803.48
+       let changes = []; //With out any entry in the array the average will be as in the mock up exactly  $-2315.12 
     for (let i = 0; i < array.length - 1; i++) {
         let month = array[i+1][0];
         let number1 = array[i][1];
@@ -133,10 +133,11 @@ function getChanges(array) {
     return changes;
 }
 
-changes = getChanges(finances); //Saving the result into a variable in order to make the code easier to read
+changes = getChanges(finances); //Saving the result of the above function into a variable in order to make the code easier to read and use
 
 // console.log(changes);
-// This function is getting the average change from all the months in the array
+
+// This function is returning the sum of all the months values in the new array (changes)
 
 function sumOfChanges(){
     let sum=0;
@@ -148,7 +149,7 @@ function sumOfChanges(){
 }
 
 
-//This function is getting the average from the changes in profit/losses
+//This function is returning  the average from the changes in profit/losses
 function getAverage() {
    
  return average = Math.round((sumOfChanges()/ changes.length) * 100) / 100;
@@ -157,7 +158,7 @@ function getAverage() {
 
 
 
-//This function is getting the lowest month value in the new array (changes)
+//This function is returning the lowest month value and name in the new array (changes)
 function getLowestMonth(array) {
 
     for (let i = 0; i < array.length; i++) {
@@ -169,7 +170,8 @@ function getLowestMonth(array) {
     }
     return low_month_name + " ($" + low_month + ")";
 }
-//This function is getting the highest month value in the new array (changes)
+
+//This function is returning the highest month value and name in the new array (changes)
 function getHighestMonth(array) {
 
     for (let i = 0; i < array.length; i++) {
